@@ -19,7 +19,6 @@ public class MoveCube : MonoBehaviour {
 		float z = Input.GetAxis("Vertical");
 		movimiento.Set(x, 0.0f, z);//vector de movimiento
 		transform.Translate(movimiento.normalized * velocidad * Time.deltaTime);
-		//esto es para la version sin colliders
 		/*if(!pequeno && transform.position.z >= -1f && transform.position.z <= 1f && transform.position.x >= -9f && transform.position.x <= -7f){
 			transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f);
 			transform.position = new Vector3 (transform.position.x, 0.25f, transform.position.z);
@@ -31,8 +30,7 @@ public class MoveCube : MonoBehaviour {
 			pequeno = false;
 		}*/
 	}
-	//para los colliders
-	public void OnCollisionEnter(Collision other){// tambien lo puedo haer desde aqui
+	public void OnCollisionEnter(Collision other){
 		GameObject obj = other.gameObject;
 		if(obj.layer == LayerMask.NameToLayer("Objetivo")){
 			if(pequeno){
@@ -40,7 +38,7 @@ public class MoveCube : MonoBehaviour {
 				transform.position = new Vector3 (transform.position.x, 0.5f, transform.position.z);
 				pequeno = false;
 			}
-			Destroy(obj);//puedo darle un tiempo, se ejecuta en el siguiente update
+			Destroy(obj);
 		}
 	}
 }

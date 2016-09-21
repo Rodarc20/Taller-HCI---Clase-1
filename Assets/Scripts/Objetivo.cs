@@ -1,10 +1,9 @@
 using UnityEngine;
 
 public class Objetivo : MonoBehaviour {
-    /*public void OnCollisionEnter(Collision other){//para usar esto el objeto debe tener un collider y un rigidbody
+    /*public void OnCollisionEnter(Collision other){
         GameObject player = other.gameObject;
         if(player.layer == LayerMask.NameToLayer("Jugador")){
-            print("jugador");
             MoveCube moveCube = player.GetComponent<MoveCube>();
             if(moveCube.pequeno){
                 player.transform.localScale = new Vector3 (1f, 1f, 1f);
@@ -15,4 +14,3 @@ public class Objetivo : MonoBehaviour {
         }
     }*/
 }
-//detecta los puntos de contacto, si se requiere precion

@@ -4,7 +4,6 @@ public class ZonaReducir : MonoBehaviour {
     public void OnTriggerEnter(Collider other){
         GameObject player = other.gameObject;
         if(player.layer == LayerMask.NameToLayer("Jugador")){
-            //print("jugador");
             MoveCube moveCube = player.GetComponent<MoveCube>();
             if(!moveCube.pequeno){
                 player.transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f);
